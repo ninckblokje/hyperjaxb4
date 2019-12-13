@@ -25,8 +25,6 @@ public class RunEjbHyperjaxb3Mojo extends RunXJC2Mojo {
 		mojo.setExtension(true);
 		mojo.setDebug(true);
 		// mojo.setBvariant = "ejb";
-		mojo.roundtripTestClassName = getClass().getPackage().getName()
-				+ ".RoundtripTest";
 		mojo.setForceRegenerate(true);
 	}
 

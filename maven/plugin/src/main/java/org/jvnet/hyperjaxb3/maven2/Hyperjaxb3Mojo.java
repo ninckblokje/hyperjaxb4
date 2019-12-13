@@ -52,14 +52,6 @@ public class Hyperjaxb3Mojo extends XJC23Mojo {
 	public File target;
 
 	/**
-	 * Name of the roundtrip test case. If omitted, no roundtrip test case is
-	 * generated.
-	 * 
-	 */
-	@Parameter(property = "maven.hj3.roundtripTestClassName")
-	public String roundtripTestClassName;
-
-	/**
 	 * Patterns for files to be included as resources.
 	 * 
 	 */
@@ -161,7 +153,6 @@ public class Hyperjaxb3Mojo extends XJC23Mojo {
 		super.logConfiguration();
 
 		getLog().info("target:" + target);
-		getLog().info("roundtripTestClassName:" + roundtripTestClassName);
 		getLog().info("resourceIncludes:" + resourceIncludes);
 		getLog().info("variant:" + variant);
 		getLog().info("persistenceUnitName:" + persistenceUnitName);
@@ -199,10 +190,6 @@ public class Hyperjaxb3Mojo extends XJC23Mojo {
 				arguments.add("-Xhyperjaxb4-jpa22-result=" + result);
 			}
 
-			if (roundtripTestClassName != null) {
-				arguments.add("-Xhyperjaxb4-jpa22-roundtripTestClassName="
-						+ roundtripTestClassName);
-			}
 			if (persistenceUnitName != null) {
 				arguments.add("-Xhyperjaxb4-jpa22-persistenceUnitName="
 						+ persistenceUnitName);
@@ -244,11 +231,6 @@ public class Hyperjaxb3Mojo extends XJC23Mojo {
 			resource.addInclude(resourceInclude);
 		}
 		getProject().addResource(resource);
-
-		if (this.roundtripTestClassName != null) {
-			getProject().addTestCompileSourceRoot(
-					getGenerateDirectory().getPath());
-		}
 	}
 
 	public static class Appender extends AppenderSkeleton {
