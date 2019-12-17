@@ -1,0 +1,152 @@
+package ninckblokje.hyperjaxb4.schema.simple;
+
+import java.io.Serializable;
+import java.math.BigInteger;
+import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
+import ninckblokje.hyperjaxb4.test.support.domain.BaseClass;
+import org.jvnet.hyperjaxb3.xml.bind.annotation.adapters.XMLGregorianCalendarAsDate;
+import org.jvnet.hyperjaxb3.xml.bind.annotation.adapters.XMLGregorianCalendarAsDateTime;
+import org.jvnet.hyperjaxb3.xml.bind.annotation.adapters.XmlAdapterUtils;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "allRequiredType", propOrder = { "stringField", "dateTimeField", "dateField", "booleanField", "integerField", "enumField" })
+@Entity(name = "AllRequiredType")
+@Table(name = "ALL_REQUIRED_TYPE")
+@Inheritance(strategy = InheritanceType.JOINED)
+public class AllRequiredType extends BaseClass implements Serializable {
+
+    @XmlElement(required = true)
+    protected String stringField;
+
+    @XmlElement(required = true)
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar dateTimeField;
+
+    @XmlElement(required = true)
+    @XmlSchemaType(name = "date")
+    protected XMLGregorianCalendar dateField;
+
+    protected boolean booleanField;
+
+    @XmlElement(required = true)
+    protected BigInteger integerField;
+
+    @XmlElement(required = true)
+    @XmlSchemaType(name = "string")
+    protected ninckblokje.hyperjaxb4.schema.simple.EnumType enumField;
+
+    @XmlAttribute(name = "Hjid")
+    protected Long hjid;
+
+    @Basic
+    @Column(name = "STRING_FIELD", length = 255)
+    public String getStringField() {
+        return stringField;
+    }
+
+    public void setStringField(String value) {
+        this.stringField = value;
+    }
+
+    @Transient
+    public XMLGregorianCalendar getDateTimeField() {
+        return dateTimeField;
+    }
+
+    public void setDateTimeField(XMLGregorianCalendar value) {
+        this.dateTimeField = value;
+    }
+
+    @Transient
+    public XMLGregorianCalendar getDateField() {
+        return dateField;
+    }
+
+    public void setDateField(XMLGregorianCalendar value) {
+        this.dateField = value;
+    }
+
+    @Basic
+    @Column(name = "BOOLEAN_FIELD")
+    public boolean isBooleanField() {
+        return booleanField;
+    }
+
+    public void setBooleanField(boolean value) {
+        this.booleanField = value;
+    }
+
+    @Basic
+    @Column(name = "INTEGER_FIELD", precision = 20, scale = 0)
+    public BigInteger getIntegerField() {
+        return integerField;
+    }
+
+    public void setIntegerField(BigInteger value) {
+        this.integerField = value;
+    }
+
+    @Basic
+    @Column(name = "ENUM_FIELD", length = 255)
+    @Enumerated(javax.persistence.EnumType.STRING)
+    public ninckblokje.hyperjaxb4.schema.simple.EnumType getEnumField() {
+        return enumField;
+    }
+
+    public void setEnumField(ninckblokje.hyperjaxb4.schema.simple.EnumType value) {
+        this.enumField = value;
+    }
+
+    @Id
+    @Column(name = "HJID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Long getHjid() {
+        return hjid;
+    }
+
+    public void setHjid(Long value) {
+        this.hjid = value;
+    }
+
+    @Basic
+    @Column(name = "DATE_TIME_FIELD_ITEM")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getDateTimeFieldItem() {
+        return XmlAdapterUtils.unmarshall(XMLGregorianCalendarAsDateTime.class, this.getDateTimeField());
+    }
+
+    public void setDateTimeFieldItem(Date target) {
+        setDateTimeField(XmlAdapterUtils.marshall(XMLGregorianCalendarAsDateTime.class, target));
+    }
+
+    @Basic
+    @Column(name = "DATE_FIELD_ITEM")
+    @Temporal(TemporalType.DATE)
+    public Date getDateFieldItem() {
+        return XmlAdapterUtils.unmarshall(XMLGregorianCalendarAsDate.class, this.getDateField());
+    }
+
+    public void setDateFieldItem(Date target) {
+        setDateField(XmlAdapterUtils.marshall(XMLGregorianCalendarAsDate.class, target));
+    }
+}

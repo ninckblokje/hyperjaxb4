@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="ninckblokje.hyperjaxb4.schema.simple"
+        targetNamespace="ninckblokje.hyperjaxb4.schema.simple"
+        elementFormDefault="qualified"
+>
+
+    <xs:simpleType name="enumType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="enumValue1"/>
+            <xs:enumeration value="enumValue2"/>
+            <xs:enumeration value="enumValue3"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="allRequiredType">
+        <xs:sequence>
+            <xs:element name="stringField" type="xs:string"/>
+            <xs:element name="dateTimeField" type="xs:dateTime"/>
+            <xs:element name="dateField" type="xs:date"/>
+            <xs:element name="booleanField" type="xs:boolean"/>
+            <xs:element name="integerField" type="xs:integer"/>
+            <xs:element name="enumField" type="tns:enumType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="annoxType">
+        <xs:sequence>
+            <xs:element name="annoxField" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="customJpaType">
+        <xs:sequence>
+            <xs:element name="fieldOne" type="xs:string"/>
+            <xs:element name="fieldTwoWithIndex" type="xs:string"/>
+            <xs:element name="fieldThreeOptional" type="xs:string" minOccurs="0"/>
+            <xs:element name="fieldFourNillable" type="xs:string" nillable="true"/>
+            <xs:element name="fieldFiveWithUniqueIndex" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="listType">
+        <xs:sequence>
+            <xs:element name="allRequiredListElement" type="tns:allRequiredType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="projectBaseClassType">
+        <xs:sequence>
+            <xs:element name="fieldOne" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="allRequiredElement" type="tns:allRequiredType"/>
+    <xs:element name="annoxElement" type="tns:annoxType"/>
+    <xs:element name="listElement" type="tns:listType"/>
+    <xs:element name="projectBaseClassElement" type="tns:projectBaseClassType"/>
+
+</xs:schema>

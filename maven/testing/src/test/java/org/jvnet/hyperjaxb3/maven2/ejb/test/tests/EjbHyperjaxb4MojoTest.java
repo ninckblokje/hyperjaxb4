@@ -2,9 +2,9 @@ package org.jvnet.hyperjaxb3.maven2.ejb.test.tests;
 
 import java.io.File;
 
-import org.jvnet.hyperjaxb3.maven2.ejb.test.RunEjbHyperjaxb3Mojo;
+import org.jvnet.hyperjaxb3.maven2.ejb.test.RunEjbHyperjaxb4Mojo;
 
-public class EjbHyperjaxb3MojoTest extends RunEjbHyperjaxb3Mojo {
+public class EjbHyperjaxb4MojoTest extends RunEjbHyperjaxb4Mojo {
 
 	@Override
 	public File getSchemaDirectory() {

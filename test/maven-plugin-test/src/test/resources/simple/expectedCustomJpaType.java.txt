@@ -1,0 +1,107 @@
+package ninckblokje.hyperjaxb4.schema.simple;
+
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Index;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import ninckblokje.hyperjaxb4.test.support.domain.BaseClass;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "customJpaType", propOrder = { "fieldOne", "fieldTwoWithIndex", "fieldThreeOptional", "fieldFourNillable", "fieldFiveWithUniqueIndex" })
+@Entity(name = "CustomJpaType")
+@Table(name = "JPA_TABLE", indexes = { @Index(name = "INDEX_01", columnList = "FIELD_TWO"), @Index(name = "INDEX_02", columnList = "FIELD_TWO, FIELD_FIVE", unique = true) })
+@Inheritance(strategy = InheritanceType.JOINED)
+public class CustomJpaType extends BaseClass implements Serializable {
+
+    @XmlElement(required = true)
+    protected String fieldOne;
+
+    @XmlElement(required = true)
+    protected String fieldTwoWithIndex;
+
+    protected String fieldThreeOptional;
+
+    @XmlElement(required = true, nillable = true)
+    protected String fieldFourNillable;
+
+    @XmlElement(required = true)
+    protected String fieldFiveWithUniqueIndex;
+
+    @XmlAttribute(name = "Id")
+    protected Long id;
+
+    @Basic
+    @Column(name = "FIELD_ONE", length = 255)
+    public String getFieldOne() {
+        return fieldOne;
+    }
+
+    public void setFieldOne(String value) {
+        this.fieldOne = value;
+    }
+
+    @Basic
+    @Column(name = "FIELD_TWO", nullable = false, length = 255)
+    public String getFieldTwoWithIndex() {
+        return fieldTwoWithIndex;
+    }
+
+    public void setFieldTwoWithIndex(String value) {
+        this.fieldTwoWithIndex = value;
+    }
+
+    @Basic
+    @Column(name = "FIELD_THREE", length = 255)
+    public String getFieldThreeOptional() {
+        return fieldThreeOptional;
+    }
+
+    public void setFieldThreeOptional(String value) {
+        this.fieldThreeOptional = value;
+    }
+
+    @Basic
+    @Column(name = "FIELD_FOUR", length = 255)
+    public String getFieldFourNillable() {
+        return fieldFourNillable;
+    }
+
+    public void setFieldFourNillable(String value) {
+        this.fieldFourNillable = value;
+    }
+
+    @Basic
+    @Column(name = "FIELD_FIVE", nullable = false, length = 255)
+    public String getFieldFiveWithUniqueIndex() {
+        return fieldFiveWithUniqueIndex;
+    }
+
+    public void setFieldFiveWithUniqueIndex(String value) {
+        this.fieldFiveWithUniqueIndex = value;
+    }
+
+    @Id
+    @Column(name = "ID", nullable = false)
+    @GeneratedValue(generator = "JPA_ID_GEN", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "JPA_ID_GEN", sequenceName = "JPA_ID_SQ", initialValue = 1, allocationSize = 1)
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long value) {
+        this.id = value;
+    }
+}

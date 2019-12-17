@@ -41,7 +41,7 @@ import com.sun.tools.xjc.Options;
 import org.jvnet.mjiip.v_2_3.XJC23Mojo;
 
 @Mojo(name = "generate", defaultPhase = LifecyclePhase.GENERATE_SOURCES, requiresDependencyResolution = ResolutionScope.COMPILE, threadSafe = true)
-public class Hyperjaxb3Mojo extends XJC23Mojo {
+public class Hyperjaxb4Mojo extends XJC23Mojo {
 
 	/**
 	 * Target directory for the generated mappings. If left empty, mappings are

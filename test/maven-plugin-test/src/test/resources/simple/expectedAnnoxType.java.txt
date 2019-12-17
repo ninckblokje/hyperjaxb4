@@ -1,0 +1,57 @@
+package ninckblokje.hyperjaxb4.schema.simple;
+
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import ninckblokje.hyperjaxb4.test.support.annotation.ClassAnnotation;
+import ninckblokje.hyperjaxb4.test.support.annotation.MethodAnnotation;
+import ninckblokje.hyperjaxb4.test.support.domain.BaseClass;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "annoxType", propOrder = { "annoxField" })
+@ClassAnnotation("classAnnotation")
+@Entity(name = "AnnoxType")
+@Table(name = "ANNOX_TYPE")
+@Inheritance(strategy = InheritanceType.JOINED)
+public class AnnoxType extends BaseClass implements Serializable {
+
+    @XmlElement(required = true)
+    protected String annoxField;
+
+    @XmlAttribute(name = "Hjid")
+    protected Long hjid;
+
+    @MethodAnnotation("getterAnnotation")
+    @Basic
+    @Column(name = "ANNOX_FIELD", length = 255)
+    public String getAnnoxField() {
+        return annoxField;
+    }
+
+    public void setAnnoxField(String value) {
+        this.annoxField = value;
+    }
+
+    @Id
+    @Column(name = "HJID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Long getHjid() {
+        return hjid;
+    }
+
+    public void setHjid(Long value) {
+        this.hjid = value;
+    }
+}

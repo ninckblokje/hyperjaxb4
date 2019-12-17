@@ -1,0 +1,60 @@
+package ninckblokje.hyperjaxb4.schema.simple;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import ninckblokje.hyperjaxb4.test.support.domain.BaseClass;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "listType", propOrder = { "allRequiredListElement" })
+@Entity(name = "ListType")
+@Table(name = "LIST_TYPE")
+@Inheritance(strategy = InheritanceType.JOINED)
+public class ListType extends BaseClass implements Serializable {
+
+    @XmlElement(required = true)
+    protected List<AllRequiredType> allRequiredListElement;
+
+    @XmlAttribute(name = "Hjid")
+    protected Long hjid;
+
+    @OneToMany(targetEntity = AllRequiredType.class, cascade = { CascadeType.ALL })
+    @JoinColumn(name = "ALL_REQUIRED_LIST_ELEMENT_LI_0")
+    public List<AllRequiredType> getAllRequiredListElement() {
+        if (allRequiredListElement == null) {
+            allRequiredListElement = new ArrayList<AllRequiredType>();
+        }
+        return this.allRequiredListElement;
+    }
+
+    public void setAllRequiredListElement(List<AllRequiredType> allRequiredListElement) {
+        this.allRequiredListElement = allRequiredListElement;
+    }
+
+    @Id
+    @Column(name = "HJID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Long getHjid() {
+        return hjid;
+    }
+
+    public void setHjid(Long value) {
+        this.hjid = value;
+    }
+}

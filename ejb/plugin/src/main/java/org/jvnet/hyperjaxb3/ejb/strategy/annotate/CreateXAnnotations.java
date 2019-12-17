@@ -369,9 +369,6 @@ public class CreateXAnnotations {
 
 	// 9.1.1
 	public XAnnotation<javax.persistence.Table> createTable(Table cTable) {
-		System.err.println(cTable.getName());
-		System.err.println(cTable.getIndex());
-
 		return cTable == null ? null :
 		//
 				new XAnnotation<javax.persistence.Table>(

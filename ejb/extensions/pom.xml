@@ -1,26 +1,23 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>hyperjaxb4-ejb</artifactId>
-	<packaging>pom</packaging>
-	<name>Hyperjaxb4 EJB</name>
 	<parent>
 		<groupId>ninckblokje.hyperjaxb4</groupId>
-		<artifactId>hyperjaxb4</artifactId>
+        <artifactId>hyperjaxb4-ejb</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
+	<artifactId>hyperjaxb4-ejb-extensions</artifactId>
+	<packaging>pom</packaging>
+	<name>Hyperjaxb4 EJB Extensions</name>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	
+
 	<modules>
-		<module>schemas</module>
-		<module>runtime</module>
-		<module>plugin</module>
-		<module>extensions</module>
+		<module>naming</module>
 	</modules>
 </project>

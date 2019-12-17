@@ -1,0 +1,35 @@
+package ninckblokje.hyperjaxb4.schema.simple;
+
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import ninckblokje.hyperjaxb4.test.maven.domain.SpecialBaseClass;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "projectBaseClassType", propOrder = { "fieldOne" })
+@Entity(name = "ProjectBaseClassType")
+@Table(name = "PROJECT_BASE_CLASS_TYPE")
+@Inheritance(strategy = InheritanceType.JOINED)
+public class ProjectBaseClassType extends SpecialBaseClass implements Serializable {
+
+    @XmlElement(required = true)
+    protected String fieldOne;
+
+    @Basic
+    @Column(name = "FIELD_ONE", length = 255)
+    public String getFieldOne() {
+        return fieldOne;
+    }
+
+    public void setFieldOne(String value) {
+        this.fieldOne = value;
+    }
+}
