@@ -246,6 +246,12 @@
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
                 <artifactId>maven-jaxb23-plugin</artifactId>
                 <version>${maven-jaxb23-plugin.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.glassfish.jaxb</groupId>
+                        <artifactId>jaxb-xjc-jdk9</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
