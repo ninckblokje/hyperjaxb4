@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jxb:bindings
+        xmlns:annox="http://annox.dev.java.net"
+        xmlns:hj="http://hyperjaxb3.jvnet.org/ejb/schemas/customizations"
+        xmlns:inheritance="http://jaxb2-commons.dev.java.net/basic/inheritance"
+        xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+        xmlns:orm="http://xmlns.jcp.org/xml/ns/persistence/orm"
+        xmlns:persistence="http://xmlns.jcp.org/xml/ns/persistence"
+        xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+            http://hyperjaxb3.jvnet.org/ejb/schemas/customizations ../../../../../../ejb/schemas/customizations/src/main/resources/customizations.xsd
+            http://java.sun.com/xml/ns/jaxb https://raw.githubusercontent.com/eclipse-ee4j/jaxb-api/master/bindingschema.xsd
+            http://java.sun.com/xml/ns/jaxb/xjc https://raw.githubusercontent.com/eclipse-ee4j/jaxb-ri/master/jaxb-ri/xjc/src/main/schemas/com/sun/tools/xjc/reader/xmlschema/bindinfo/xjc.xsd
+            http://xmlns.jcp.org/xml/ns/persistence ../../../../../../ejb/schemas/persistence/src/main/resources/persistence/persistence_2_2.xsd
+            http://xmlns.jcp.org/xml/ns/persistence/orm ../../../../../../ejb/schemas/persistence/src/main/resources/persistence/orm/orm_2_2.xsd
+        "
+        jxb:extensionBindingPrefixes="annox hj inheritance orm xjc"
+        version="2.1">
+
+    <jxb:globalBindings localScoping="toplevel">
+        <jxb:serializable/>
+        <xjc:superClass name="ninckblokje.hyperjaxb4.test.support.domain.BaseClass"/>
+    </jxb:globalBindings>
+
+    <jxb:bindings schemaLocation="../noUnderscore.xsd" node="/xs:schema">
+
+    </jxb:bindings>
+
+</jxb:bindings>

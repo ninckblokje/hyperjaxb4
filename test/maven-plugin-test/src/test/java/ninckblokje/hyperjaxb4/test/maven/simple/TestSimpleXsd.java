@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.nio.file.Paths;
 
-import static ninckblokje.hyperjaxb4.test.maven.util.TestHelper.assertJavaFile;
+import static ninckblokje.hyperjaxb4.test.support.util.TestHelper.assertJavaFile;
 
 public class TestSimpleXsd {
 

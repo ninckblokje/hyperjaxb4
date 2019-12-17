@@ -1,4 +1,4 @@
-package ninckblokje.hyperjaxb4.test.maven.util;
+package ninckblokje.hyperjaxb4.test.support.util;
 
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;

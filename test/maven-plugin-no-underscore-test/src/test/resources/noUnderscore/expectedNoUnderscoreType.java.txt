@@ -1,0 +1,53 @@
+package ninckblokje.hyperjaxb4.schema.no.underscore;
+
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import ninckblokje.hyperjaxb4.test.support.domain.BaseClass;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "noUnderscoreType", propOrder = { "fieldOne" })
+@Entity(name = "NoUnderscoreType")
+@Table(name = "NOUNDERSCORETYPE")
+@Inheritance(strategy = InheritanceType.JOINED)
+public class NoUnderscoreType extends BaseClass implements Serializable {
+
+    @XmlElement(required = true)
+    protected String fieldOne;
+
+    @XmlAttribute(name = "Hjid")
+    protected Long hjid;
+
+    @Basic
+    @Column(name = "FIELDONE", length = 255)
+    public String getFieldOne() {
+        return fieldOne;
+    }
+
+    public void setFieldOne(String value) {
+        this.fieldOne = value;
+    }
+
+    @Id
+    @Column(name = "HJID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Long getHjid() {
+        return hjid;
+    }
+
+    public void setHjid(Long value) {
+        this.hjid = value;
+    }
+}
