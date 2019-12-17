@@ -48,7 +48,7 @@ public class Hyperjaxb4Mojo extends XJC23Mojo {
 	 * generated together with sources.
 	 * 
 	 */
-	@Parameter(property = "maven.hj3.target")
+	@Parameter(property = "maven.hj4.target")
 	public File target;
 
 	/**
@@ -64,7 +64,7 @@ public class Hyperjaxb4Mojo extends XJC23Mojo {
 	 * implementations. Possible values are "hibernate" and "ejb-hibernate".
 	 * 
 	 */
-	@Parameter(property = "maven.hj3.variant", defaultValue = "jpa22")
+	@Parameter(property = "maven.hj4.variant", defaultValue = "jpa22")
 	public String variant = "jpa22";
 
 	/**
@@ -72,7 +72,7 @@ public class Hyperjaxb4Mojo extends XJC23Mojo {
 	 * Persistence unit name (EJB3 specific).
 	 * 
 	 */
-	@Parameter(property = "maven.hj3.persistenceUnitName")
+	@Parameter(property = "maven.hj4.persistenceUnitName")
 	public String persistenceUnitName;
 
 	/**
@@ -80,7 +80,7 @@ public class Hyperjaxb4Mojo extends XJC23Mojo {
 	 * Persistence unit name (EJB3 specific).
 	 * 
 	 */
-	@Parameter(property = "maven.hj3.persistenceXml")
+	@Parameter(property = "maven.hj4.persistenceXml")
 	public File persistenceXml;
 
 	/**
@@ -88,7 +88,7 @@ public class Hyperjaxb4Mojo extends XJC23Mojo {
 	 * Whether the <code>hashCode()</code> method should be generated.
 	 * 
 	 */
-	@Parameter(property = "maven.hj3.generateHashCode", defaultValue = "true")
+	@Parameter(property = "maven.hj4.generateHashCode", defaultValue = "true")
 	public boolean generateHashCode = true;
 
 	/**
@@ -96,7 +96,7 @@ public class Hyperjaxb4Mojo extends XJC23Mojo {
 	 * Whether the <code>equals(...)</code> methods should be generated.
 	 * 
 	 */
-	@Parameter(property = "maven.hj3.generateEquals", defaultValue = "true")
+	@Parameter(property = "maven.hj4.generateEquals", defaultValue = "true")
 	public boolean generateEquals = true;
 
 	/**
@@ -104,14 +104,14 @@ public class Hyperjaxb4Mojo extends XJC23Mojo {
 	 * Whether the generated id property must be transient.
 	 * 
 	 */
-	@Parameter(property = "maven.hj3.generateTransientId", defaultValue = "false")
+	@Parameter(property = "maven.hj4.generateTransientId", defaultValue = "false")
 	public boolean generateTransientId = false;
 
 	/**
 	 * Generation result. Possible values are "annotations", "mappingFiles".
 	 * 
 	 */
-	@Parameter(property = "maven.hj3.result", defaultValue = "annotations")
+	@Parameter(property = "maven.hj4.result", defaultValue = "annotations")
 	public String result = "annotations";
 
 	@Parameter

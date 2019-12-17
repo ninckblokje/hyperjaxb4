@@ -102,6 +102,7 @@
         <commons-io.version>2.6</commons-io.version>
         <commons-lang3.version>3.9</commons-lang3.version>
         <commons-logging.version>1.1.1</commons-logging.version>
+        <hyperjaxb3.version>0.6.1</hyperjaxb3.version>
         <jaxb.version>2.3.2</jaxb.version>
         <jaxb-core.version>2.3.0.1</jaxb-core.version>
         <jaxb2-basics.version>0.10.0</jaxb2-basics.version>
