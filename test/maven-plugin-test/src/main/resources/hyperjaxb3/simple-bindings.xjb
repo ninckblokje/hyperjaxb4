@@ -59,7 +59,7 @@
         </jxb:bindings>
 
         <jxb:bindings node="xs:complexType[@name='projectBaseClassType']">
-            <inheritance:extends>ninckblokje.hyperjaxb4.test.maven.domain.SpecialBaseClass</inheritance:extends>
+            <inheritance:extends>ninckblokje.hyperjaxb4.test.support.domain.SpecialBaseClass</inheritance:extends>
         </jxb:bindings>
     </jxb:bindings>
 

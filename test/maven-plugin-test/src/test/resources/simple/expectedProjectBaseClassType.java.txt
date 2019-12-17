@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import ninckblokje.hyperjaxb4.test.maven.domain.SpecialBaseClass;
+import ninckblokje.hyperjaxb4.test.support.domain.SpecialBaseClass;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "projectBaseClassType", propOrder = { "fieldOne" })
