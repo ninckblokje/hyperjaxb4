@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence version="2.2" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence https://raw.githubusercontent.com/jakarta-ee/persistence-spec/master/src/main/resources/javax/persistence/persistence_2_2.xsd&#10;http://xmlns.jcp.org/xml/ns/persistence/orm https://raw.githubusercontent.com/jakarta-ee/persistence-spec/master/src/main/resources/javax/persistence/orm_2_2.xsd" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:orm="http://xmlns.jcp.org/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <persistence-unit name="ninckblokje.hyperjaxb4.schema.simple">
+        <class>ninckblokje.hyperjaxb4.schema.simple.AllRequiredType</class>
+        <class>ninckblokje.hyperjaxb4.schema.simple.AnnoxType</class>
+        <class>ninckblokje.hyperjaxb4.schema.simple.CustomJpaType</class>
+        <class>ninckblokje.hyperjaxb4.schema.simple.ListType</class>
+        <class>ninckblokje.hyperjaxb4.schema.simple.ProjectBaseClassType</class>
+    </persistence-unit>
+</persistence>
