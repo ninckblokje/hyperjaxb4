@@ -29,7 +29,7 @@ import org.jvnet.hyperjaxb3.xml.bind.annotation.adapters.XMLGregorianCalendarAsD
 import org.jvnet.hyperjaxb3.xml.bind.annotation.adapters.XmlAdapterUtils;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "allRequiredType", propOrder = { "stringField", "dateTimeField", "dateField", "booleanField", "integerField", "enumField" })
+@XmlType(name = "allRequiredType", propOrder = { "stringField", "dateTimeField", "dateField", "booleanField", "integerField", "enumField", "longFieldNameWithMoreThen30Characters" })
 @Entity(name = "AllRequiredType")
 @Table(name = "ALL_REQUIRED_TYPE")
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -54,6 +54,9 @@ public class AllRequiredType extends BaseClass implements Serializable {
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected ninckblokje.hyperjaxb4.schema.simple.EnumType enumField;
+
+    @XmlElement(required = true)
+    protected String longFieldNameWithMoreThen30Characters;
 
     @XmlAttribute(name = "Hjid")
     protected Long hjid;
@@ -115,6 +118,16 @@ public class AllRequiredType extends BaseClass implements Serializable {
 
     public void setEnumField(ninckblokje.hyperjaxb4.schema.simple.EnumType value) {
         this.enumField = value;
+    }
+
+    @Basic
+    @Column(name = "LONG_FIELD_NAME_WITH_MORE_TH_0", length = 255)
+    public String getLongFieldNameWithMoreThen30Characters() {
+        return longFieldNameWithMoreThen30Characters;
+    }
+
+    public void setLongFieldNameWithMoreThen30Characters(String value) {
+        this.longFieldNameWithMoreThen30Characters = value;
     }
 
     @Id

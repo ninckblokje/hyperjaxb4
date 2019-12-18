@@ -4,7 +4,13 @@ import org.jvnet.hyperjaxb3.ejb.strategy.mapping.Mapping;
 import org.jvnet.hyperjaxb3.ejb.strategy.naming.impl.DefaultNaming;
 
 public class CustomSimpleNoUnderscoreNaming extends DefaultNaming {
-	
+
+	public CustomSimpleNoUnderscoreNaming() {
+		super();
+
+		setMaxIdentifierLength(128);
+	}
+
 	@Override
 	public String getName(Mapping context, final String draftName) {
 		String name = super.getName(context, draftName);

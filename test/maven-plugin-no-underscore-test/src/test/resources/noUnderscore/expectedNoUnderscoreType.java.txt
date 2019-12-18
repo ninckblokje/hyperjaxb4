@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
 import ninckblokje.hyperjaxb4.test.support.domain.BaseClass;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "noUnderscoreType", propOrder = { "fieldOne" })
+@XmlType(name = "noUnderscoreType", propOrder = { "fieldOne", "longFieldNameWithMoreThen30Characters" })
 @Entity(name = "NoUnderscoreType")
 @Table(name = "NOUNDERSCORETYPE")
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -26,6 +26,9 @@ public class NoUnderscoreType extends BaseClass implements Serializable {
 
     @XmlElement(required = true)
     protected String fieldOne;
+
+    @XmlElement(required = true)
+    protected String longFieldNameWithMoreThen30Characters;
 
     @XmlAttribute(name = "Hjid")
     protected Long hjid;
@@ -38,6 +41,16 @@ public class NoUnderscoreType extends BaseClass implements Serializable {
 
     public void setFieldOne(String value) {
         this.fieldOne = value;
+    }
+
+    @Basic
+    @Column(name = "LONGFIELDNAMEWITHMORETHEN30CHARACTERS", length = 255)
+    public String getLongFieldNameWithMoreThen30Characters() {
+        return longFieldNameWithMoreThen30Characters;
+    }
+
+    public void setLongFieldNameWithMoreThen30Characters(String value) {
+        this.longFieldNameWithMoreThen30Characters = value;
     }
 
     @Id
