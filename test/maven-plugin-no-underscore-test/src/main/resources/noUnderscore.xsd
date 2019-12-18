@@ -9,6 +9,7 @@
     <xs:complexType name="noUnderscoreType">
         <xs:sequence>
             <xs:element name="fieldOne" type="xs:string"/>
+            <xs:element name="longFieldNameWithMoreThen30Characters" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 

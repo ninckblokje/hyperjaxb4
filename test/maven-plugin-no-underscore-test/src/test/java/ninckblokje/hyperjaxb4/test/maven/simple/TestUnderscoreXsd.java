@@ -13,7 +13,7 @@ public class TestUnderscoreXsd {
     private static final String GENERATED_DIR = "target/generated-sources/xjc/ninckblokje/hyperjaxb4/schema/no/underscore";
 
     @Test
-    public void testAllRequiredType() throws IOException {
+    public void testNoUnderscoreType() throws IOException {
         assertJavaFile(
                 Paths.get(
                         EXPECTATIONS_DIR,

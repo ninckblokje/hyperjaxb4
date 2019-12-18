@@ -22,6 +22,7 @@
             <xs:element name="booleanField" type="xs:boolean"/>
             <xs:element name="integerField" type="xs:integer"/>
             <xs:element name="enumField" type="tns:enumType"/>
+            <xs:element name="longFieldNameWithMoreThen30Characters" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 
