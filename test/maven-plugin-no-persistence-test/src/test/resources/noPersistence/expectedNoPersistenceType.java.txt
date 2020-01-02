@@ -1,0 +1,66 @@
+package ninckblokje.hyperjaxb4.schema.no.persistence;
+
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import ninckblokje.hyperjaxb4.test.support.domain.BaseClass;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "noPersistenceType", propOrder = { "fieldOne", "longFieldNameWithMoreThen30Characters" })
+@Entity(name = "NoPersistenceType")
+@Table(name = "NO_PERSISTENCE_TYPE")
+@Inheritance(strategy = InheritanceType.JOINED)
+public class NoPersistenceType extends BaseClass implements Serializable {
+
+    @XmlElement(required = true)
+    protected String fieldOne;
+
+    @XmlElement(required = true)
+    protected String longFieldNameWithMoreThen30Characters;
+
+    @XmlAttribute(name = "Hjid")
+    protected Long hjid;
+
+    @Basic
+    @Column(name = "FIELD_ONE", length = 255)
+    public String getFieldOne() {
+        return fieldOne;
+    }
+
+    public void setFieldOne(String value) {
+        this.fieldOne = value;
+    }
+
+    @Basic
+    @Column(name = "LONG_FIELD_NAME_WITH_MORE_TH_0", length = 255)
+    public String getLongFieldNameWithMoreThen30Characters() {
+        return longFieldNameWithMoreThen30Characters;
+    }
+
+    public void setLongFieldNameWithMoreThen30Characters(String value) {
+        this.longFieldNameWithMoreThen30Characters = value;
+    }
+
+    @Id
+    @Column(name = "HJID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Long getHjid() {
+        return hjid;
+    }
+
+    public void setHjid(Long value) {
+        this.hjid = value;
+    }
+}

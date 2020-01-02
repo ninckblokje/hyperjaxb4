@@ -19,5 +19,6 @@
 
 	<modules>
 		<module>naming</module>
+		<module>no-persistence-marshaller</module>
 	</modules>
 </project>

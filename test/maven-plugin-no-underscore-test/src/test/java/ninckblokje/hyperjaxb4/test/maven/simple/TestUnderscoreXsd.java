@@ -2,10 +2,12 @@ package ninckblokje.hyperjaxb4.test.maven.simple;
 
 import org.junit.Test;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 
 import static ninckblokje.hyperjaxb4.test.support.util.TestHelper.assertJavaFile;
+import static org.junit.Assert.assertTrue;
 
 public class TestUnderscoreXsd {
 
@@ -24,5 +26,7 @@ public class TestUnderscoreXsd {
                         "NoUnderscoreType.java"
                 )
         );
+
+        assertTrue(new File("target/generated-sources/xjc/META-INF/persistence.xml").exists());
     }
 }
