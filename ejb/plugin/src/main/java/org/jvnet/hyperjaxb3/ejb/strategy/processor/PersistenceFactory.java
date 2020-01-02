@@ -11,7 +11,7 @@ public class PersistenceFactory {
 	}
 
 	protected String getVersion() {
-		return "1.0";
+		return "2.2";
 	}
 
 }

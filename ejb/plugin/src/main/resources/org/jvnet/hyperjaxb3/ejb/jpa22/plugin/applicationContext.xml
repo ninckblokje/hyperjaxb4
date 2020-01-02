@@ -15,14 +15,6 @@
 		<property name="ignoring" ref="ignoring" />
 	</bean>
 
-	<bean name="persistenceFactory"
-		class="org.jvnet.hyperjaxb3.ejb.jpa22.strategy.processor.PersistenceFactory">
-	</bean>
-
-	<bean name="persistenceMarshaller"
-		class="org.jvnet.hyperjaxb3.ejb.jpa22.strategy.processor.PersistenceMarshaller">
-	</bean>
-
 	<bean name="createXAnnotations"
 		class="org.jvnet.hyperjaxb3.ejb.jpa22.strategy.annotate.CreateXAnnotations">
 	</bean>
