@@ -74,7 +74,7 @@
             <id>mvn-snapshots</id>
             <url>https://pkgs.dev.azure.com/ninckblokje/open-pipelines/_packaging/mvn-snapshots/maven/v1</url>
             <releases>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </releases>
             <snapshots>
                 <enabled>true</enabled>
@@ -87,7 +87,7 @@
                 <enabled>true</enabled>
             </releases>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
@@ -115,6 +115,7 @@
         <maven.plugin.testing.version>3.3.0</maven.plugin.testing.version>
         <maven-jaxb2-plugin-testing.version>0.14.0</maven-jaxb2-plugin-testing.version>
         <maven-jaxb23-plugin.version>0.14.0</maven-jaxb23-plugin.version>
+        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
         <spring.version>5.2.1.RELEASE</spring.version>
 
         <!-- test versions -->
@@ -342,6 +343,19 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${maven-release-plugin.version}</version>
+                <configuration>
+                    <arguments>-Phyperjaxb4</arguments>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <releaseProfiles>hyperjaxb4</releaseProfiles>
+                    <tagNameFormat>@{project.version}</tagNameFormat>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 </project>
