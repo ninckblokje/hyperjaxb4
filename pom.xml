@@ -38,8 +38,8 @@
         <connection>scm:git:git@github.com:ninckblokje/hyperjaxb4.git</connection>
         <developerConnection>scm:git:git@github.com:ninckblokje/hyperjaxb4.git</developerConnection>
         <url>https://github.com/ninckblokje/hyperjaxb4</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
     <distributionManagement>
         <snapshotRepository>
             <id>mvn-snapshots</id>
@@ -98,6 +98,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- library version -->
