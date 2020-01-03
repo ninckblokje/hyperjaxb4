@@ -46,6 +46,10 @@
             <id>mvn-snapshots</id>
             <url>https://pkgs.dev.azure.com/ninckblokje/open-pipelines/_packaging/mvn-snapshots/maven/v1</url>
         </snapshotRepository>
+        <repository>
+            <id>mvn-releases</id>
+            <url>https://pkgs.dev.azure.com/ninckblokje/open-pipelines/_packaging/mvn-releases/maven/v1</url>
+        </repository>
     </distributionManagement>
     <repositories>
         <repository>
