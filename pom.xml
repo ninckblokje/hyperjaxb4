@@ -4,7 +4,7 @@
 
     <groupId>ninckblokje.hyperjaxb4</groupId>
     <artifactId>hyperjaxb4</artifactId>
-    <version>0.1.2</version>
+    <version>0.1.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Hyperjaxb4</name>
@@ -38,7 +38,7 @@
         <connection>scm:git:git@github.com:ninckblokje/hyperjaxb4.git</connection>
         <developerConnection>scm:git:git@github.com:ninckblokje/hyperjaxb4.git</developerConnection>
         <url>https://github.com/ninckblokje/hyperjaxb4</url>
-        <tag>0.1.2</tag>
+        <tag>HEAD</tag>
     </scm>
     <distributionManagement>
         <snapshotRepository>
