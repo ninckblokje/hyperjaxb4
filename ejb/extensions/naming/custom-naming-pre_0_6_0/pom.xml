@@ -3,7 +3,7 @@
 	<parent>
 		<groupId>ninckblokje.hyperjaxb4</groupId>
         	<artifactId>hyperjaxb4-ejb-extensions-naming</artifactId>
-		<version>0.1.0</version>
+		<version>0.1.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>hyperjaxb4-ejb-extensions-custom-naming-pre_0_6_0</artifactId>
 	<packaging>jar</packaging>
