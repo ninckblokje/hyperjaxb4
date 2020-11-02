@@ -124,7 +124,7 @@
 
         <!-- test versions -->
         <hsqldb.version>2.5.0</hsqldb.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
     </properties>
 
     <modules>
